@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+
+		// Generador de codigo
+
+		var n = "2C733975842A29FF68A984E52198435779CC849A99369754329A89C84693789744C896A95923F55A6894"
+		var generador;
+		var intentos = 0
+		var i;
+		var nueva = i
+		var codigo = []
+
+
+				primerPaso();
+				function primerPaso () {
+					for (i=0; i < n.length; i++) {
+						if (n[i]== "B" || n[i] == "D" || n[i] == "2" || n[i] == "3" || n[i] == "5" || n[i] == "7"){
+							intentos++
+							var nueva = i
+							nueva++
+							generador = n[i] + n[nueva]
+							nueva++
+							var primos = n[nueva] + n[nueva+1]
+							primos = parseInt(primos,16)
+							if (n[nueva] == "B" || n[nueva] == "D" || n[nueva] == "2" || n[nueva] == "3" || n[nueva] == "5" || n[nueva] == "7") {
+								generador = generador + n[nueva]
+								nueva++
+								if (n[nueva] == "B" || n[nueva] == "D" || n[nueva] == "2" || n[nueva] == "3" || n[nueva] == "5" || n[nueva] == "7") {
+									generador = generador + n[nueva]
+									codigo.push(generador)
+								}
+							}
+
+								else if( primos <100 && primos%2 != 0 && primos%3 != 0 && primos%5 != 0 && primos%7 != 0 && primos%11 != 0 && primos%13 !=0) {
+									generador = generador + primos.toString() 
+								}
+
+					}
+					
+				}
+			}
+
+
+					
+
+
+		</script>
+		</head>
+
+
+	</body>
+</html>
